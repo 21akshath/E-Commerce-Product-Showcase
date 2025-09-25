@@ -1,0 +1,59 @@
+const products = [
+  {id:1,name:"Smartphone",price:19999,img:"https://picsum.photos/seed/p1/600/400",desc:"Powerful phone"},
+  {id:2,name:"Laptop",price:55999,img:"https://picsum.photos/seed/p2/600/400",desc:"Lightweight laptop"},
+  {id:3,name:"Headphones",price:2999,img:"https://picsum.photos/seed/p3/600/400",desc:"Noise-cancelling"},
+  {id:4,name:"T-Shirt",price:799,img:"https://picsum.photos/seed/p4/600/400",desc:"Comfortable tee"},
+  {id:5,name:"Sneakers",price:2499,img:"https://picsum.photos/seed/p5/600/400",desc:"Running shoes"},
+  {id:6,name:"Camera",price:17999,img:"https://picsum.photos/seed/p6/600/400",desc:"Mirrorless camera"}
+];
+
+let cart = [];
+let currentProductId = null;
+
+function displayProducts(list=products){
+  const el=document.getElementById("productList"); el.innerHTML="";
+  list.forEach(p=>{
+    const div=document.createElement("div"); div.className="card";
+    div.innerHTML = `<img src="${p.img}" alt="${p.name}" /><h3>${p.name}</h3><div>₹${p.price}</div>
+      <div style="margin-top:8px"><button class="add-btn" onclick="addToCart(${p.id})">Add to Cart</button>
+      <button class="view-btn" onclick="viewDetails(${p.id})">View Details</button></div>`;
+    el.appendChild(div);
+  });
+}
+displayProducts();
+
+function viewDetails(id){
+  const p = products.find(x=>x.id===id); if(!p) return;
+  currentProductId = id;
+  document.getElementById("modalImg").src = p.img;
+  document.getElementById("modalName").textContent = p.name;
+  document.getElementById("modalPrice").textContent = `Price: ₹${p.price}`;
+  document.getElementById("modalDesc").textContent = p.desc;
+  document.getElementById("productModal").style.display = "flex";
+}
+function closeModal(){ document.getElementById("productModal").style.display = "none"; }
+
+function addToCart(id, qty=1){ const p = products.find(x=>x.id===id); if(!p) return;
+  const item = cart.find(i=>i.id===id); if(item) item.qty += qty; else cart.push({id:p.id,name:p.name,price:p.price,qty});
+  updateCartCount();
+}
+function addFromModal(){ const q = parseInt(document.getElementById("qtyInput").value)||1; addToCart(currentProductId,q); closeModal(); alert("Added"); }
+function updateCartCount(){ document.getElementById("cartCount").textContent = cart.reduce((s,i)=>s+i.qty,0); }
+document.getElementById("cartBtn").onclick = ()=>{ renderCart(); document.getElementById("cartModal").style.display = "flex"; };
+
+function renderCart(){
+  const el = document.getElementById("cartItems"); el.innerHTML="";
+  if(cart.length===0){ el.innerHTML="<p>Your cart is empty</p>"; document.getElementById("cartTotal").textContent=""; return; }
+  let total = 0;
+  cart.forEach((it,idx)=>{ total += it.price*it.qty; const row = document.createElement("div"); row.style.display="flex"; row.style.justifyContent="space-between";
+    row.style.padding="8px 0"; row.innerHTML = `<div>${it.name} x ${it.qty}</div><div>₹${it.price*it.qty}</div>`; el.appendChild(row);
+    });
+  document.getElementById("cartTotal").textContent = `Total: ₹${total}`;
+}
+function closeCart(){ document.getElementById("cartModal").style.display="none"; }
+function checkout(){ if(cart.length===0){ alert("Cart empty"); return; } renderCart(); document.getElementById("cartTotal").textContent += " • Order placed ✅"; cart=[]; updateCartCount(); }
+
+function searchProducts(){ const q=document.getElementById("searchBox").value.toLowerCase(); displayProducts(products.filter(p=>p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q))); }
+function sortProducts(){ const v=document.getElementById("sortSelect").value; let s=[...products]; if(v==="low") s.sort((a,b)=>a.price-b.price); else if(v==="high") s.sort((a,b)=>b.price-a.price); else if(v==="az") s.sort((a,b)=>a.name.localeCompare(b.name)); displayProducts(s); }
+function toggleDarkMode(){ document.body.classList.toggle("dark-mode"); }
+window.onclick = e => { if(e.target.classList.contains("modal")) e.target.style.display="none"; };
