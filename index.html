@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Showcase</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="toggleTheme">🌙 Dark Mode</button>
+    </div>
+
+    <h1>E-Commerce Product Showcase</h1>
+    <div class="cart">🛒 Cart: <span id="cartCount">0</span></div>
+
+    <div class="filters">
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="audio">Audio</option>
+            <option value="wearable">Wearables</option>
+            <option value="computers">Computers</option>
+            <option value="photography">Photography</option>
+            <option value="gaming">Gaming</option>
+            <option value="drones">Drones</option>
+        </select>
+        <select id="sortFilter">
+            <option value="default">Sort By</option>
+            <option value="low-high">Price: Low → High</option>
+            <option value="high-low">Price: High → Low</option>
+        </select>
+    </div>
+
+    <div class="product-container" id="top-products"></div>
+    <div class="product-container" id="bottom-products"></div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+            <h3>User Reviews</h3>
+            <div id="reviews"></div>
+            <div id="reviewForm">
+                <textarea id="reviewInput" placeholder="Write your review"></textarea>
+                <div class="star-rating">
+                    <span class="star" data-value="1">☆</span>
+                    <span class="star" data-value="2">☆</span>
+                    <span class="star" data-value="3">☆</span>
+                    <span class="star" data-value="4">☆</span>
+                    <span class="star" data-value="5">☆</span>
+                </div>
+                <button id="submitReview">Submit Review</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
