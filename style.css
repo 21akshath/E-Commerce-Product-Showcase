@@ -1,22 +1,23 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0; padding: 0;
-  background: #f0f4ff; /* light blue background */
+  background: #e6f0ff; /* light blue background */
 }
 
 header {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: #0056b3; /* deep blue */
+  background: #004aad; /* deep blue */
   color: #fff;
   padding: 15px;
 }
 
 header h1 {
   margin: 0;
-  color: #00c8ff; /* Sky blue for SkyMart brand */
+  color: #ffdd00; /* golden accent */
 }
+
 header input, header select {
   padding: 6px;
   border-radius: 4px;
@@ -31,7 +32,7 @@ header input, header select {
 h2 {
   text-align: center;
   margin: 20px 0;
-  color: #0056b3;
+  color: #004aad;
 }
 
 #productsContainer {
@@ -78,7 +79,7 @@ h2 {
 }
 
 .product-card button:hover {
-  background: #ffdd00; /* golden on hover */
+  background: #ffdd00; 
   color: #000;
 }
 
@@ -101,7 +102,7 @@ h2 {
   max-height: 80%;
   overflow-y: auto;
   text-align: center;
-  border-top: 5px solid #0056b3; /* blue accent */
+  border-top: 5px solid #004aad;
 }
 
 .modal-content img {
@@ -113,6 +114,6 @@ h2 {
   float: right;
   font-size: 22px;
   cursor: pointer;
-  color: #0056b3;
+  color: #004aad;
 }
 
