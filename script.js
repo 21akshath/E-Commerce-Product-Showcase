@@ -1,15 +1,15 @@
-// Product Data with Unsplash images
+// Product Data with new Unsplash images
 const products = [
-  {id:1, name:"Wireless Headphones", price:1200, category:"accessories", image:"https://images.unsplash.com/photo-1511376777868-611b54f68947?auto=format&fit=crop&w=200&q=80"},
-  {id:2, name:"Smart Watch", price:2500, category:"accessories", image:"https://images.unsplash.com/photo-1523475496153-3c25f9f6b16d?auto=format&fit=crop&w=200&q=80"},
-  {id:3, name:"Laptop", price:45000, category:"laptop", image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=200&q=80"},
-  {id:4, name:"Smartphone", price:18000, category:"smartphone", image:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=200&q=80"},
-  {id:5, name:"Gaming Mouse", price:1500, category:"gaming", image:"https://images.unsplash.com/photo-1606813904140-6c3d5d7a9792?auto=format&fit=crop&w=200&q=80"},
-  {id:6, name:"Bluetooth Speaker", price:2200, category:"electronics", image:"https://images.unsplash.com/photo-1570813749830-1425f18f3c53?auto=format&fit=crop&w=200&q=80"},
-  {id:7, name:"Digital Camera", price:28000, category:"camera", image:"https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=200&q=80"},
-  {id:8, name:"Tablet", price:12000, category:"tablet", image:"https://images.unsplash.com/photo-1580894732444-34a6f64a5c15?auto=format&fit=crop&w=200&q=80"},
-  {id:9, name:"Fitness Tracker", price:3000, category:"fitness", image:"https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=200&q=80"},
-  {id:10, name:"Gaming Keyboard", price:3500, category:"gaming", image:"https://images.unsplash.com/photo-1611078485844-5a34b5e7f220?auto=format&fit=crop&w=200&q=80"}
+  {id:1, name:"Laptop", price:45000, category:"laptop", image:"https://source.unsplash.com/400x300/?laptop"},
+  {id:2, name:"Smartphone", price:18000, category:"smartphone", image:"https://source.unsplash.com/400x300/?smartphone"},
+  {id:3, name:"Smart TV", price:32000, category:"electronics", image:"https://source.unsplash.com/400x300/?tv"},
+  {id:4, name:"Wireless Earbuds", price:2200, category:"accessories", image:"https://source.unsplash.com/400x300/?earbuds"},
+  {id:5, name:"Smart Watch", price:3500, category:"accessories", image:"https://source.unsplash.com/400x300/?smartwatch"},
+  {id:6, name:"Tablet", price:15000, category:"tablet", image:"https://source.unsplash.com/400x300/?tablet"},
+  {id:7, name:"Bluetooth Speaker", price:2800, category:"electronics", image:"https://source.unsplash.com/400x300/?speaker"},
+  {id:8, name:"Gaming Console", price:40000, category:"gaming", image:"https://source.unsplash.com/400x300/?console"},
+  {id:9, name:"Digital Camera", price:28000, category:"camera", image:"https://source.unsplash.com/400x300/?camera"},
+  {id:10, name:"Fitness Tracker", price:2500, category:"fitness", image:"https://source.unsplash.com/400x300/?fitness-tracker"}
 ];
 
 // State
@@ -172,3 +172,5 @@ function filterAndSortProducts() {
 // Initial Render
 renderProducts(products);
 updateCartCount();
+
+
