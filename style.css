@@ -15,9 +15,8 @@ header {
 
 header h1 {
   margin: 0;
-  color: #ffdd00; /* golden yellow for contrast */
+  color: #00c8ff; /* Sky blue for SkyMart brand */
 }
-
 header input, header select {
   padding: 6px;
   border-radius: 4px;
@@ -116,3 +115,4 @@ h2 {
   cursor: pointer;
   color: #0056b3;
 }
+
