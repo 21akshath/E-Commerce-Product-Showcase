@@ -1,0 +1,178 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #e9f7ec;
+  color: #333;
+}
+
+header {
+  background-color: #2e7d32;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+
+header .tagline {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #dcedc8;
+}
+
+.cart-icon {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  background: #4caf50;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.container {
+  display: flex;
+}
+
+.categories {
+  width: 220px;
+  background-color: #a5d6a7;
+  padding: 1rem;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+}
+
+.categories h2 {
+  text-align: center;
+  color: #1b5e20;
+}
+
+.categories ul {
+  list-style: none;
+  padding: 0;
+}
+
+.categories li {
+  background: #66bb6a;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
+
+.categories li:hover {
+  background: #388e3c;
+}
+
+.main-section {
+  flex: 1;
+}
+
+.sort-section {
+  margin: 1rem 2rem 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 2rem;
+}
+
+.product {
+  background: #c8e6c9;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product img {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+button {
+  background: #ffd700;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ffca28;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  overflow-y: auto;
+}
+
+.modal-content {
+  background: #f1f8e9;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px; /* reduced from 500px */
+  max-height: 80vh; /* limit height */
+  overflow-y: auto; /* make content scrollable if too long */
+  box-shadow: 0 0 10px #2e7d32;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+  font-size: 22px;
+  color: #333;
+}
+
+.review-section {
+  margin-top: 15px;
+}
+
+.review {
+  background: #dcedc8;
+  margin-top: 8px;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.stars span {
+  font-size: 22px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.stars span.selected {
+  color: gold;
+}
+
+@media (max-width: 768px) {
+  .categories {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .product-grid {
+    padding: 1rem;
+  }
+}

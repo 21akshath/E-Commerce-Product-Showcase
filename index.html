@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenCart – Shop Smart. Shop Green.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🌿 GreenCart</h1>
+    <p class="tagline">Shop Smart. Shop Green.</p>
+    <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
+  </header>
+
+  <div class="container">
+    <aside class="categories">
+      <h2>Categories</h2>
+      <ul>
+        <li onclick="filterCategory('All')">All</li>
+        <li onclick="filterCategory('Fashion')">Fashion</li>
+        <li onclick="filterCategory('Electronics')">Electronics</li>
+      </ul>
+    </aside>
+
+    <main class="main-section">
+      <div class="sort-section">
+        <label>Sort by Price:</label>
+        <select id="sort-price" onchange="sortProducts()">
+          <option value="default">Default</option>
+          <option value="low">Low to High</option>
+          <option value="high">High to Low</option>
+        </select>
+      </div>
+      <section class="product-grid" id="product-list"></section>
+    </main>
+  </div>
+
+  <!-- Cart Modal -->
+  <div id="cart-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="toggleCart()">&times;</span>
+      <h2>Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <h3 id="cart-total"></h3>
+      <button class="checkout-btn" onclick="openCheckout()">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Product Details Modal -->
+  <div id="details-modal" class="modal">
+    <div class="modal-content" id="details-box">
+      <span class="close" onclick="closeDetails()">&times;</span>
+      <div id="details-content"></div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div id="checkout-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeCheckout()">&times;</span>
+      <h2>Checkout</h2>
+      <label>Payment Method:</label>
+      <select id="payment-method">
+        <option>UPI</option>
+        <option>Credit Card</option>
+        <option>Cash on Delivery</option>
+      </select>
+      <button class="pay-btn" onclick="submitPayment()">Submit Payment</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
